@@ -1,7 +1,7 @@
 class Solution {
     public int maximumUniqueSubarray(int[] nums) {
         HashMap<Integer,Integer> map = new HashMap<>();
-        int sum = 0,max=0,j=0;
+        int sum = 0,ans=0,j=0;
         for(int i=0;i<nums.length;i++)
         {
             sum+=nums[i];
@@ -14,9 +14,9 @@ class Solution {
                     j++;
                 }
             }
-            max = Math.max(max,sum);
+            ans = Math.max(ans,sum);
             map.put(nums[i],i);
         }
-        return max;
+        return ans;
     }
 }
